@@ -1,0 +1,11 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "name": "lead",
+            "database": "${workspaceFolder:go-fiber}/lead.db"
+        }
+    ],
+    "sqltools.useNodeRuntime": true
+}
