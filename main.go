@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"log"
 
 	"github.com/gofiber/fiber/v2"
 	"github.com/jinzhu/gorm"
@@ -26,7 +27,7 @@ func initDatabase() {
 	}
 	fmt.Println("Database connection opened")
 	database.DBconn.AutoMigrate(&lead.Lead{})
-	fmt.Println("Database migrated")
+	fmt.Println("Database migrated Successfully")
 
 }
 
@@ -34,6 +35,6 @@ func main() {
 	app := fiber.New()
 	initDatabase()
 	setupRoutes(app)
-	app.Listen(":3000")
+	log.Fatal(app.Listen(":3000"))
 	defer database.DBconn.Close()
 }

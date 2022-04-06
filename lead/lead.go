@@ -66,5 +66,5 @@ func DeleteLead(c *fiber.Ctx) error {
 	}
 
 	db.Delete(&lead)
-	return c.SendString("Lead Successfully deleted")
+	return c.SendString("Lead Successfully deleted!")
 }
